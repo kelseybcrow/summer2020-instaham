@@ -20,11 +20,12 @@
 </template>
 
 <script>
-import Post from "@/components/PostComponent.vue"
+import Post from '@components/PostComponent.vue'
+
 export default {
-  name: "home",
+  name: 'home',
   mounted() {
-    this.$store.dispatch("getAllPosts")
+    this.$store.dispatch('getAllPosts')
   },
   data() {
     return {
@@ -41,11 +42,11 @@ export default {
   },
   methods: {
     newPost() {
-      this.$store.dispatch("newPost", this.post)
+      this.$store.dispatch('newPost', this.post)
     }
   },
   components: {
     Post
   }
-};
+}
 </script>

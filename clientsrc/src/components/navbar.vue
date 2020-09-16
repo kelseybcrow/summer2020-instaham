@@ -34,24 +34,23 @@
 </template>
 
 <script>
-import axios from "axios";
-import { getUserData } from "@bcwdev/auth0-vue";
+import axios from 'axios'
+import { getUserData } from "@bcwdev/auth0-vue"
+
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   methods: {
     async login() {
-      await this.$auth.loginWithPopup();
+      await this.$auth.loginWithPopup()
       if (this.$auth.isAuthenticated) {
-        this.$store.dispatch("setBearer", this.$auth.bearer);
-        this.$store.dispatch("getProfile");
+        this.$store.dispatch('setBearer', this.$auth.bearer)
+        this.$store.dispatch('getProfile')
       }
     },
     async logout() {
-      this.$store.dispatch("resetBearer");
-      await this.$auth.logout({ returnTo: window.location.origin });
+      this.$store.dispatch('resetBearer')
+      await this.$auth.logout({ returnTo: window.location.origin })
     }
   }
-};
+}
 </script>
-
-<style></style>

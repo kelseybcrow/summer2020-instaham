@@ -1,29 +1,31 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-// @ts-ignore
-import Home from "../views/Home.vue";
-// @ts-ignore
-import Profile from "../views/Profile.vue";
-import { authGuard } from "@bcwdev/auth0-vue";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import Profile from "../views/Profile.vue"
+import { authGuard } from "@bcwdev/auth0-vue"
 
-Vue.use(VueRouter);
+
+Vue.use(VueRouter)
+
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home
   },
   {
-    path: "/profile",
-    name: "Profile",
+    path: '/profile',
+    name: 'Profile',
     component: Profile,
     beforeEnter: authGuard
   }
-];
+]
+
 
 const router = new VueRouter({
   routes
-});
+})
 
-export default router;
+
+export default router

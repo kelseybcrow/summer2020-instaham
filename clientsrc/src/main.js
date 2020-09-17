@@ -1,10 +1,9 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import { Auth0Plugin, onAuth } from '@bcwdev/auth0-vue'
-import { domain, clientID, audience } from './authConfig'
-
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import { Auth0Plugin, onAuth } from '@bcwdev/auth0-vue';
+import { domain, clientId, audience } from './authConfig';
 
 Vue.use(Auth0Plugin, {
   domain,
@@ -15,15 +14,14 @@ Vue.use(Auth0Plugin, {
       appState && appState.targetUrl 
       ? appState.targetUrl 
       : window.location.pathname
-    )
+    );
   }
-})
-
+});
 
 new Vue({
   router,
   store,
   render: function(h) {
-    return h(App)
+    return h(App);
   }
-}).$mount('#app')
+}).$mount('#app');
